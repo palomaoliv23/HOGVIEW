@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "user": "teste@gmail.com",
+        "personagem": "Harry Potter",
+        "nota": "5",
+        "review": "Personagem principal com personalidade forte e determinado, extremamente companheiro e leal aos seus amigos. Voc\u00ea vai amar Harry Potter!"
+    },
+    {
+        "id": 2,
+        "user": "teste@gmail.com",
+        "personagem": "Hermione Granger",
+        "nota": "5",
+        "review": "mulher"
+    },
+    {
+        "id": 3,
+        "user": "teste@gmail.com",
+        "personagem": "Dolores Umbridge",
+        "nota": "2",
+        "review": "mulher"
+    },
+    {
+        "id": 5,
+        "user": "teste2@gmail.com",
+        "personagem": "Harry Potter",
+        "nota": "4",
+        "review": "bacana"
+    }
+]

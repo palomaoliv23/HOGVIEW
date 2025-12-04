@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Hogview - Recuperar {% endblock titulo %}
+
+{% block conteudo %}
+    <div class="cadastro_content">
+      <h1>RECUPERAR SENHA</h1>
+      <hr>
+      <form action="{{url_for('front_controller.recsenha')}}" method="POST">
+          <div class="mb-3">
+              <label for="mail" class="form-label">E-mail:</label>
+            <input type="text" class="form-control" id="mail" name="mail" value="{{ email }}" readonly>
+            <label for="new" class="form-label">Nova senha:</label>
+            <input type="text" class="form-control" id="new" name="new" required>
+          </div>
+          <button type="submit" class="btn-add">Alterar Senha</button>
+        </form>
+    </div>
+{% endblock conteudo %}

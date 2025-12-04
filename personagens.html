@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Hogview - Personagens {% endblock titulo %}
+
+{% block conteudo %}
+
+    {% for item in dados %}
+        <div class="personagens_content">
+            <p>{{item.name}}</p>
+            <p>{{item.dateOfBirth}}</p>
+            <p>{{item.gender}}</p>
+            <p>{{item.house}}</p>
+            <img class="foto" src="{{item.image}}" height="250px" width="200px"></img> 
+            <p>{{item.actor}}</p>
+
+            <br>
+            <form action="{{url_for('front_controller.avaliacao')}}" method="POST">
+                <input id="personagem" name="personagem" value="{{item.name}}" hidden>
+                <button>Adicionar avaliação</button>
+            </form>
+            
+            <details>
+                <summary>Avaliações</summary>
+                    {% for info in avaliacao %}
+                        {% if item.name == info.personagem %}
+                            <div class="card">
+                                <div class="card-body">
+                                    <hr>
+                                    <h5 class="card-title">{{info.user}}</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">{{info.nota}}
+                                        {% for nota in range(0, info.nota | int, 1) %}
+                                            <img class="estrela" src="/static/image/estrela.png" width="20px" height="20px">
+                                        {% endfor %}
+                                    </h6>
+                                    <p class="card-text">{{info.review}}</p>
+                                    {% if info.user == session.get('userLogado') %}
+                                        <a href="{{url_for('front_controller.editarpersonagem', info_id = info.id ) }}" class="btn-edit">Editar</a>
+                                        <a href="{{url_for('front_controller.apagarpersonagem', info_id = info.id ) }}" class="btn-delete" onclick="return confirm('Confirma a exclusão da avaliação?');">Excluir</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+            </details>
+            <hr>
+        </div>
+    {% endfor %}
+
+{% endblock conteudo %}

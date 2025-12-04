@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Hogview - Avaliar {% endblock titulo %}
+
+{% block conteudo %}
+    <div class="avaliar_content">
+      <h1>Avaliação</h1>
+      <hr>
+      <form action="{{ url_for('front_controller.avaliar') }}" method="POST" enctype="multipart/form-data" class="row g-3">
+        <div>
+          <p>Nota de {{personagem}}:</p>
+
+          <input type="radio" id="nota1" name="nota" value="1" required>
+          <label for="1">1</label><br>
+          <input type="radio" id="nota2" name="nota" value="2" required>
+          <label for="2">2</label><br>
+          <input type="radio" id="nota3" name="nota" value="3" required>
+          <label for="3">3</label><br>
+          <input type="radio" id="nota4" name="nota" value="4" required>
+          <label for="4">4</label><br>
+          <input type="radio" id="nota5" name="nota" value="5" required>
+          <label for="5">5</label><br><br>
+          
+          <textarea id="review" name="review" rows="4" cols="50" placeholder="Deixe seu comentário acerca do personagem." maxlength="500"></textarea>
+          <input id="personagem" name="personagem" value="{{personagem}}" hidden>
+
+          <button type="submit" class="btn-add">Avaliar</button><br>
+        </div>
+        </form>
+      </div>
+{% endblock conteudo %}

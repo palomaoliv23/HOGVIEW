@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "jos\u00e9 maria",
+        "senha": "1234",
+        "tel": "123467900",
+        "mail": "jose@gmail.com",
+        "imagem": "image/padrao.png"
+    },
+    {
+        "nome": "teste",
+        "senha": "123",
+        "tel": "987654321",
+        "mail": "teste@gmail.com",
+        "imagem": "image/padrao.png"
+    },
+    {
+        "nome": "teste2",
+        "senha": "123",
+        "tel": "2142142421412412",
+        "mail": "teste2@gmail.com",
+        "imagem": "image/padrao.png"
+    }
+]
